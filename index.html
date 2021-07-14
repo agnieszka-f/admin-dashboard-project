@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="images/icons/css/Glyphter.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Admin dashboard</title>
+  </head>
+  <body>
+    <!-- navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
+  <div class="container-fluid">
+  <!-- paste offcanvas trigger -->
+<button class="navbar-toggler me-2" 
+type="button" data-bs-toggle="offcanvas" 
+data-bs-target="#offcanvasExample" 
+aria-controls="offcanvasExample"
+aria-label="nav-toggler-button">
+  <span class="navbar-toggler-icon"
+  data-bs-target="#offcanvasExample"
+  aria-hidden="true"
+  ></span>
+</button>
+  <!---------- offcanvas trigger -------------->
+    <a class="navbar-brand me-auto title" href="#">Just do it</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mb-2 mb-lg-0 d-flex ms-auto">
+        <li class="nav-item dropdown px-3 border-0">
+          <a class="nav-link dropdown-toggle sidebar-link" href="#" id="navbarDropdown"  data-bs-toggle="dropdown" aria-expanded="false" aria-label="dropdown-toggler-button">
+            <span class="me-3" aria-hidden="true"><i class="icon-wallet"></i></span>
+			<span>$1,500.00</span>
+          </a>
+          <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li class="border-0"><a class="dropdown-item" href="#">Action</a></li>
+            <li class="border-0"><a class="dropdown-item" href="#">Another action</a></li>
+            <li class="border-0"><hr class="dropdown-divider"></li>
+            <li class="border-0"><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+		<li class="nav-item px-3 border-0">
+			<a class="nav-link sidebar-link" href="#" aria-hidden="true">
+				<span><i class="icon-notification"></i></span>
+			</a>
+		</li>
+		<li class="nav-item px-3 border-0">
+			<a class="nav-link sidebar-link" href="#">
+				<span class="me-3"><i class="icon-login"></i></span>
+				<span class="login-activ">Leonardo Dicarpio</span>
+			</a>
+		</li>
+		<li class="nav-item px-3 border-0">
+			<a class="nav-link sidebar-link" href="#" data-bs-toggle="modal" data-bs-target="#quitModal" aria-hidden="true">
+				<span><i class="icon-quit"></i></span>
+			</a>
+		</li>
+      </ul>
+		<!-- dropdown -->
+    </div>
+  </div>
+</nav>
+	<!--navbar-->
+	<!--offcavanasmenu--->
+<div class="offcanvas offcanvas-start bg-dark text-white sidebar-nav border-0" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header d-lg-none">
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body p-0">
+	<nav class="navbar-dark sidebar-left">
+		<ul class="navbar-nav">
+			<li class="nav-item border-0 py-2">
+				<a class="nav-link px-4" href="#general">
+					<span class="me-2">
+						<i class="icon-general "></i>
+					</span>
+					<span>
+						General
+					</span>
+				</a>
+			</li>
+			<li class="nav-item border-0 py-2">
+				<a class="nav-link px-4" href="#details">
+					<span class="me-2">
+						<i class="icon-details"></i>
+					</span>
+					<span>
+						Details
+					</span>
+				</a>
+			</li>
+			<li class="nav-item border-0 py-2">
+				<a class="nav-link px-4" href="#links">
+					<span class="me-2">
+						<i class="icon-links"></i>
+					</span>
+					<span>
+						Links
+					</span>
+				</a>
+			</li>
+			<li class="nav-item border-0 py-2">
+				<a class="nav-link px-4" href="#banners">
+					<span class="me-2">
+						<i class="icon-banners"></i>
+					</span>
+					<span>
+						Banners
+					</span>
+				</a>
+			</li>
+			<li class="nav-item border-0 py-2">
+				<a class="nav-link px-4" href="#personal-data">
+					<span class="me-2">
+						 <i class="icon-personaldata"></i>
+					</span>
+					<span>
+						Personal data
+					</span>
+				</a>
+			</li>
+			<li class="nav-item border-0 py-2">
+				<a class="nav-link px-4" href="#payout">
+					<span class="me-2">
+						<i class="icon-payout"></i>
+					</span>
+					<span>
+						Payout
+					</span>
+				</a>
+			</li>
+			<li class="nav-item border-0 py-2">
+				<a class="nav-link px-4" href="#postback">
+					<span class="me-2">
+						 <i class="icon-postback"></i>
+					</span>
+					<span>
+						Postback
+					</span>
+				</a>
+			</li>
+			<li class="my-4 border-0">
+				<hr class="dropdown-divider">
+			</li>
+			<li class="mt-2 mb-4 border-0">
+				<div class="text-muted small fw-bold text-uppercase px-3"> Young manager
+				</div>
+			</li>
+			<li class="border-0 py-2">
+				<a class="nav-link px-4" href="#manager">
+					<span class="me-2">
+						 <img src="./images/manager.png" class="img-fluid mx-auto" alt="Responsive image">
+					</span>
+					<span class="login-activ">Anna L.</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+  </div>
+</div>
+	<!--offcavanasmenu--->
+	<main class="mt-5 pt-5 border-0">
+		<div class="container">
+			<div id="general" class="content-container  my-4">
+				<div class="card">
+				  <h5 class="card-header py-3">General statistic</h5>
+				  <div class="card-body">
+					<div class="row border-bottom py-5">
+						<div class="col col-12">
+							 <form class="date-picker-container row align-items-center">
+								<div class="col-12 col-sm-11 p-0">
+									<div class="input-group">
+									  <input type="date" id="date-from-general" class="form-control" value="2021-07-01">
+									  <input type="date" id="date-to-general" class="form-control"  value="2021-07-07">
+								</div>
+								</div>
+								<div class="col-12 col-sm-1 p-0">
+									<button class="btn refresh-button" type="submit" aria-label="refresh-button"><i class="icon-refresh" aria-hidden="true"></i></button>
+								</div>
+                              </form>
+						</div>
+					</div>
+					<div class="row py-5 date-picker-container">
+						<div class="col-12 col-sm-6 p-0">
+							<ul class="list-group">
+							  <li class="list-group-item d-flex justify-content-between align-items-center text-muted">
+								Visit Signups
+								<span class="small">145</span>
+							  </li>
+							  <li class="list-group-item d-flex justify-content-between align-items-center text-muted">
+								FTD
+								<span class="small">445</span>
+							  </li>
+							</ul>
+						</div>
+						<div class="col-12 col-sm-6 p-0">
+							<ul class="list-group">
+							  <li class="list-group-item d-flex justify-content-between align-items-center text-muted">
+								Net deposit
+								<span class="small">564</span>
+							  </li>
+							  <li class="list-group-item d-flex justify-content-between align-items-center text-muted">
+								 Turn over
+								<span class="small">432</span>
+							  </li>
+							</ul>
+						</div>
+					</div>
+					<div class="row py-5 date-picker-container">
+						<div class="col-12">
+							 <p class="text-left pb-4 text-muted fs-4">Earnings chart</p>
+							<ul class="nav nav-tabs" id="myTab" role="tablist">
+							  <li class="nav-item" role="presentation">
+								<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Signups</button>
+							  </li>
+							  <li class="nav-item" role="presentation">
+								<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">FTD</button>
+							  </li>
+							  <li class="nav-item" role="presentation">
+								<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Earned</button>
+							  </li>
+							</ul>
+							<div class="tab-content" id="myTabContent">
+							  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+								<canvas id="barChart"></canvas>
+							  </div>
+							  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Second tab</div>
+							  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Third tab</div>
+							</div>
+						</div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			<div id="details" class="content-container  my-4 d-none">
+				<div class="card">
+				  <h5 class="card-header py-3">Detail statistic</h5>
+				  <div class="card-body">
+					<div class="row border-bottom py-5">
+						<div class="col col-12">
+							 <form class="date-picker-container row align-items-center">
+								<div class="col-12 col-sm-11 p-0">
+									<div class="input-group">
+									  <input type="date" id="date-from-detail" class="form-control"  value="2021-07-01">
+									  <input type="date" id="date-to-detail" class="form-control"  value="2021-07-07">
+								</div>
+								</div>
+								<div class="col-12 col-sm-1 p-0">
+									<button class="btn refresh-button" type="submit" aria-label="nav-toggler-button"><i class="icon-refresh" aria-hidden="true"></i></button>
+								</div>
+                              </form>
+						</div>
+						<div class="col col-12"></div>
+						<div class="col col-12"></div>
+					</div>
+					<div class="row py-5">
+						<div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                          <th scope="col">Tracker name</th>
+                                          <th scope="col">Initiated date</th>
+                                          <th scope="col">Visits</th>
+                                          <th scope="col">Unique</th>
+                                          <th scope="col">Signups</th>
+                                          <th scope="col">FTD</th>
+                                          <th scope="col">Depositors</th>
+                                          <th scope="col">Deposits ($)</th>
+                                          <th scope="col">Payout ($)</th>
+                                          <th scope="col">Turnover</th>
+                                          <th scope="col">Deal</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>aff/sam_test</td>
+                                          <td>17/11/2020 (17:00)</td>
+                                          <td>569</td>
+                                          <td>114</td>
+                                          <td>12</td>
+                                          <td>6</td>
+                                          <td>3</td>
+                                          <td>34,345.27</td>
+                                          <td>234.00</td>
+                                          <td>456,767.57</td>
+                                          <td>cpl (200)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>aff/sam_test</td>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>569</td>
+                                            <td>114</td>
+                                            <td>12</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>34,345.27</td>
+                                            <td>234.00</td>
+                                            <td>456,767.57</td>
+                                            <td>cpl (200)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>aff/sam_test</td>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>569</td>
+                                            <td>114</td>
+                                            <td>12</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>34,345.27</td>
+                                            <td>234.00</td>
+                                            <td>456,767.57</td>
+                                            <td>cpl (200)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>aff/sam_test</td>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>569</td>
+                                            <td>114</td>
+                                            <td>12</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>34,345.27</td>
+                                            <td>234.00</td>
+                                            <td>456,767.57</td>
+                                            <td>cpl (200)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>aff/sam_test</td>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>569</td>
+                                            <td>114</td>
+                                            <td>12</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>34,345.27</td>
+                                            <td>234.00</td>
+                                            <td>456,767.57</td>
+                                            <td>cpl (200)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>aff/sam_test</td>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>569</td>
+                                            <td>114</td>
+                                            <td>12</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>34,345.27</td>
+                                            <td>234.00</td>
+                                            <td>456,767.57</td>
+                                            <td>cpl (200)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>aff/sam_test</td>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>569</td>
+                                            <td>114</td>
+                                            <td>12</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>34,345.27</td>
+                                            <td>234.00</td>
+                                            <td>456,767.57</td>
+                                            <td>cpl (200)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>aff/sam_test</td>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>569</td>
+                                            <td>114</td>
+                                            <td>12</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>34,345.27</td>
+                                            <td>234.00</td>
+                                            <td>456,767.57</td>
+                                            <td>cpl (200)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>aff/sam_test</td>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>569</td>
+                                            <td>114</td>
+                                            <td>12</td>
+                                            <td>6</td>
+                                            <td>3</td>
+                                            <td>34,345.27</td>
+                                            <td>234.00</td>
+                                            <td>456,767.57</td>
+                                            <td>cpl (200)</td>
+                                        </tr>
+                                      </tbody>
+                                </table>
+                              </div>
+						</div>
+					</div>
+					<div class="row pb-5">
+						     <nav>
+							  <ul class="pagination justify-content-center">
+								<li class="page-item">
+								  <a class="page-link" href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								  </a>
+								</li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item active"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item">
+								  <a class="page-link" href="#" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+								  </a>
+								</li>
+							  </ul>
+							</nav>
+					</div>
+				  </div>
+				</div>
+			</div>
+			<div id="links" class="content-container  my-4 d-none">
+				<div class="card">
+				  <h5 class="card-header py-3">Links</h5>
+				  <div class="card-body">
+					<div class="d-grid gap-2 d-flex justify-content-center my-4 date-picker-container" data-bs-toggle="modal" data-bs-target="#linksModal">
+						 <button type="button" class="btn orange-button">+ add new</button>
+					</div>
+					<div class="row py-5 date-picker-container">
+
+						 <ul class="list-group">
+                                <li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Home page</p>
+                                    <p class="link">http://www.homepage.com</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+                                <li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Currently offer</p>
+                                    <p class="link">http://www.currently.com</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+                                <li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Blurpix</p>
+                                    <p class="link">http://www.blurpix.com</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+                                <li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Your site</p>
+                                    <p class="link">http://www.yoursite.com</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+								<li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Google</p>
+                                    <p class="link">http://www.google.com</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+								<li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Facebook</p>
+                                    <p class="link">http://www.facebook.com</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+								<li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Blurax</p>
+                                    <p class="link">http://www.blurax.com</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+								<li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Twitter</p>
+                                    <p class="link">http://www.twitter.com</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+                              </ul>
+
+					</div>
+					<div class="d-grid gap-2 d-flex justify-content-center my-4 " data-bs-toggle="modal" data-bs-target="#linksModal">
+						 <button type="button" class="btn orange-button">+ add new</button>
+					</div>
+				  </div>
+				</div>
+			</div>
+			<div id="banners" class="content-container my-4 d-none">
+				<div class="card">
+				  <h5 class="card-header py-3">Banners</h5>
+				  <div class="card-body">
+					<div class="d-grid gap-2 d-flex justify-content-center my-4 date-picker-container" data-bs-toggle="modal" data-bs-target="#bannersModal">
+						 <button type="button" class="btn orange-button">+ add new</button>
+					</div>
+					<div class="row py-5 date-picker-container">
+						    <ul class="list-group">
+                                <li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Baner main</p>
+                                    <p class="link">http://www.website.com/bannermain.gif</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+                                <li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Sign up banner</p>
+                                    <p class="link">http://www.website.com/signupbanner.gif</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+                                <li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Banner left side</p>
+                                    <p class="link">http://www.website.com/bannerleftside.gif</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+                                <li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Vertical banner</p>
+                                    <p class="link">http://www.website.com/verticalbanner.gif</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+								<li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Front banner</p>
+                                    <p class="link">http://www.website.com/frontbanner.gif</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+								<li class="list-group-item row-link text-left py-3">
+                                    <p class="link-name text-muted">Horizontal banner</p>
+                                    <p class="link">http://www.website.com/horizontalbanner.gif</p>
+                                    <p class="link-icon">
+                                        <i class="icon-links"></i>
+                                        <i class="icon-trash"></i>
+                                    </p>
+                                </li>
+                              </ul>
+					</div>
+					<div class="d-grid gap-2 d-flex justify-content-center my-4" data-bs-toggle="modal" data-bs-target="#bannersModal">
+						 <button type="button" class="btn orange-button">+ add new</button>
+					</div>
+					<!--end card body-->
+				  </div>
+				</div>
+			</div>
+			<div id="personal-data" class="content-container my-4 d-none">
+				<div class="card">
+				  <h5 class="card-header py-3">Personal data</h5>
+				  <div class="card-body">
+					       <form>
+                            <div class="row border-bottom py-4">
+                                <div class="date-picker-container">
+                                <div class="form-group row align-items-center">
+                                    <label for="name" class="col-form-label col-sm-2 text-muted">Name</label>
+                                    <div class="col-sm-10">
+                                        <input id="name" type="text" class="form-control" >
+                                    </div>
+                                    <label for="surname" class="col-form-label col-sm-2 text-muted">Surname</label>
+                                    <div class="col-sm-10">
+                                        <input id="surname" type="text" class="form-control" >
+                                    </div>
+                                    <label for="email" class="col-form-label col-sm-2 text-muted">E-mail</label>
+                                    <div class="col-sm-10">
+                                        <input id="email" type="email" class="form-control" >
+                                    </div>
+                                    <label for="phone" class="col-form-label col-sm-2 text-muted">Phon number</label>
+                                    <div class="col-sm-10">
+                                        <input id="phone" type="tel" class="form-control" >
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border-bottom py-4">
+                                <div class="date-picker-container">
+                                    <div class="form-group row align-items-center">
+                                        <label for="skype" class="col-form-label col-sm-2 text-muted">Skype</label>
+                                        <div class="col-sm-10">
+                                            <input id="skype" type="text" class="form-control">
+                                        </div>
+                                        <label for="icq" class="col-form-label col-sm-2 text-muted" >ICQ</label>
+                                        <div class="col-sm-10">
+                                            <input id="icq" type="text" class="form-control">
+                                        </div>
+                                        <label for="msn" class="col-form-label col-sm-2 text-muted">Msn</label>
+                                        <div class="col-sm-10">
+                                            <input id="msn" type="text" class="form-control" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border-bottom py-4">
+                                <div class="date-picker-container">
+                                    <div class="form-group row align-items-center">
+                                        <label for="wallet" class="form-label col-sm-2 text-muted">Wallet</label>
+                                        <div class="col-sm-10">
+                                            <input id="wallet" type="number" class="form-control" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border-bottom py-4">
+                                <div class="date-picker-container">
+                                    <div class="form-group row align-items-center">
+                                        <label for="password" class="form-label col-sm-2 text-muted">Password</label>
+                                        <div class="col-sm-10">
+                                            <input id="password" type="password" class="form-control" >
+                                        </div>
+                                        <label for="repeat" class="form-label col-sm-2 text-muted">Repeat</label>
+                                        <div class="col-sm-10">
+                                            <input id="repeat" type="password" class="form-control" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+								<div class="d-grid gap-2 d-flex justify-content-center my-4 date-picker-container">
+									<button type="submit" class="btn orange-button">Save</button>
+								</div>
+                           </form>
+				  </div>
+				</div>
+			</div>
+			<div id="payout" class="content-container my-4 d-none">
+				<div class="card">
+				  <h5 class="card-header py-3">Payout history</h5>
+				  <div class="card-body">
+					<div class="row border-bottom py-5">
+						<div class="col col-12">
+							 <form class="date-picker-container row align-items-center">
+								<div class="col-12 col-sm-11 p-0">
+									<div class="input-group">
+									  <input type="date" id="date-from-payout" class="form-control"  value="2021-07-01">
+									  <input type="date" id="date-to-payout" class="form-control"  value="2021-07-07">
+								</div>
+								</div>
+								<div class="col-12 col-sm-1 p-0">
+									<button class="btn refresh-button" type="submit" aria-label="btn-refresh"><i class="icon-refresh" aria-hidden="true"></i></button>
+								</div>
+                              </form>
+						</div>
+					</div>
+					<div class="row py-5">
+							<div class="col-12">
+								 <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                          <th scope="col">Date</th>
+                                          <th scope="col">Amount</th>
+                                          <th scope="col">Deal</th>
+                                          <th scope="col">Account</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>17/11/2020 (17:00)</td>
+                                          <td>34,577.23</td>
+                                          <td>cpl(200)</td>
+                                          <td>bank</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>34,577.23</td>
+                                            <td>cpl(200)</td>
+                                            <td>bank</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>34,577.23</td>
+                                            <td>cpl(200)</td>
+                                            <td>bank</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>34,577.23</td>
+                                            <td>cpl(200)</td>
+                                            <td>bank</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>34,577.23</td>
+                                            <td>cpl(200)</td>
+                                            <td>bank</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>34,577.23</td>
+                                            <td>cpl(200)</td>
+                                            <td>bank</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>34,577.23</td>
+                                            <td>cpl(200)</td>
+                                            <td>bank</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>34,577.23</td>
+                                            <td>cpl(200)</td>
+                                            <td>bank</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17/11/2020 (17:00)</td>
+                                            <td>34,577.23</td>
+                                            <td>cpl(200)</td>
+                                            <td>bank</td>
+                                        </tr>
+                                      </tbody>
+                                </table>
+                              </div>
+							</div>
+					</div>
+					<div class="row pb-5">
+						     <nav>
+							  <ul class="pagination justify-content-center">
+								<li class="page-item">
+								  <a class="page-link" href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								  </a>
+								</li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item active"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item">
+								  <a class="page-link" href="#" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+								  </a>
+								</li>
+							  </ul>
+							</nav>
+					</div>
+				  </div>
+				</div>
+			<div id="postback" class="content-container my-4 d-none">
+				<div class="card">
+				  <h5 class="card-header py-3">Postback</h5>
+				   <form>
+                        <div class="card-body pr-0 pl-0">
+                            <div class="row border-bottom py-5">
+                                <div class="form-group row py-3">
+                                    <div class="col-12 col-sm-6 py-2">
+                                        <label for="signup" class="form-label text-muted fw-bold">Signup</label>
+                                        <textarea id="signup" class="form-control" rows="5"></textarea>
+                                    </div>
+                                    <div class="col-12 col-sm-6 py-2">
+                                        <label for="deposit" class="form-label text-muted fw-bold">Deposit</label>
+                                        <textarea id="deposit" class="form-control" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row py-3">
+                                    <div class="col-12 col-sm-4 py-2">
+                                        <label for="postbacktype" class="form-label text-muted fw-bold">Postback type</label>
+                                        <select id="postbacktype" class="form-select">
+                                            <option selected>S2S(http://)</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-4 py-2">
+                                        <label for="countries" class="form-label text-muted fw-bold">To countries</label>
+                                        <select id="countries" class="form-select">
+                                            <option selected>Select countries</option>
+                                            <option value="opt1">Option 1</option>
+                                            <option value="opt2">Option 2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-4 py-2">
+                                        <label for="options" class="form-label text-muted fw-bold">Sending options</label>
+                                        <select id="options" class="form-select">
+                                            <option selected>Select</option>
+                                            <option value="opt1">Opction 1</option>
+                                            <option value="opt2">Opction 2</option>
+                                            </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border-bottom py-5">
+                                <div class="form-group row">
+                                    <div class="col-12 col-sm-6 py-3">
+									<p class="send-status text-muted fw-bold px-4">send statuses</p>
+                                        <div class="w-100 checkbox-container  overflow-auto px-4">
+                                            <div class="form-check pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check1" id="check1">
+                                                <label class="form-check-label pl-2" for="check1">
+                                                  checkNumber
+                                                </label>
+                                              </div>
+                                              <div class="form-check pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check2" id="check2">
+                                                <label class="form-check-label pl-2" for="check2">
+                                                  noAnswer
+                                                </label>
+                                              </div>
+                                              <div class="form-check pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check3" id="check3">
+                                                <label class="form-check-label pl-2" for="check3">
+                                                  noCall
+                                                </label>
+                                              </div>
+                                              <div class="form-check pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check4" id="check4">
+                                                <label class="form-check-label pl-2" for="check4">
+                                                  callAgain
+                                                </label>
+                                              </div>
+                                              <div class="form-check pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check5" id="check5">
+                                                <label class="form-check-label pl-2" for="check5">
+                                                  checkNumber
+                                                </label>
+                                              </div>
+                                              <div class="form-check pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check6" id="check6">
+                                                <label class="form-check-label pl-2" for="check6">
+                                                  noAnswer
+                                                </label>
+                                              </div>
+                                              <div class="form-check pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check7" id="check7">
+                                                <label class="form-check-label pl-2" for="check7">
+                                                  noCall
+                                                </label>
+                                              </div>
+                                              <div class="form-check pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check8" id="check8">
+                                                <label class="form-check-label pl-2" for="check8">
+                                                  callAgain
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 py-3">
+									<p class="text-muted fw-bold px-4">Send after:</p>
+										<div class="d-flex justify-content-center align-items-center">
+                                        <div class="slidecontainer px-4">
+                                            <input type="range" min="0" max="168" step="1" class="slider" id="myRange">
+                                            <!-- <p>Value: <span id="val"></span></p> -->
+                                          </div>
+										</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 d-flex justify-content-end my-4">
+								<button type="submit" class="btn orange-button">Create Pixel</button>
+							</div>
+                        </div>
+                    </form>
+				</div>
+			</div>
+		</div>
+		<!----Modal for links--->
+		<div class="modal fade" id="linksModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered modal-xl">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title fw-bold" id="exampleModalLabel">add url</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <form>
+			  <div class="modal-body">
+				<!---modal body--->
+                            <div class="row border-bottom py-3">
+                                <div class="form-group row py-3">
+                                    <div class="col-12 col-sm-5">
+                                        <label for="scheme-name" class="form-label text-muted fw-bold">Sheme name</label>
+                                        <input id="scheme-name" type="text" class="form-control" >
+                                    </div>
+                                    <div class="col-12 col-sm-5">
+                                        <label for="compain" class="form-label text-muted fw-bold">Compain</label>
+                                        <select id="compain" class="form-select align-items-end">
+                                            <option selected>Select</option>
+                                            <option value="opt1">Option 2</option>
+                                            <option value="opt2">Option 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-2">
+                                        <label for="options-link" class="form-label text-muted fw-bold">Language</label>
+                                        <select id="options-link" class="form-select">
+                                            <option selected>EN</option>
+                                            <option value="opt1">PL</option>
+                                            <option value="opt2">FR</option>
+                                            </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row py-3">
+                                <div class="form-group row">
+                                    <div class="col-12">
+									<p class="text-muted fw-bold px-4">Select websites</p>
+                                        <div class="w-100 checkbox-container  overflow-auto px-4">
+                                            <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check11" id="check11">
+                                                <label class="form-check-label pl-2" for="check11">
+                                                  ipsum dolor
+                                                </label>
+                                              </div>
+                                              <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check21" id="check21">
+                                                <label class="form-check-label pl-2" for="check21">
+                                                  sit amet
+                                                </label>
+                                              </div>
+                                              <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check31" id="check31">
+                                                <label class="form-check-label pl-2" for="check31">
+                                                  neque nec
+                                                </label>
+                                              </div>
+                                              <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check41" id="check41">
+                                                <label class="form-check-label pl-2" for="check41">
+                                                  maximus pharetra
+                                                </label>
+                                              </div>
+                                              <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check51" id="check51">
+                                                <label class="form-check-label pl-2" for="check51">
+                                                  augue sit
+                                                </label>
+                                              </div>
+                                              <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check61" id="check61">
+                                                <label class="form-check-label pl-2" for="check61">
+                                                  morbi tristique
+                                                </label>
+                                              </div>
+                                              <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check71" id="check71">
+                                                <label class="form-check-label pl-2" for="check71">
+                                                  mattis ipsum
+                                                </label>
+                                              </div>
+                                              <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check81" id="check81">
+                                                <label class="form-check-label pl-2" for="check81">
+                                                  amet auctor
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check82" id="check82">
+                                                <label class="form-check-label pl-2" for="check82">
+                                                  laoreet tristique
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check83" id="check83">
+                                                <label class="form-check-label pl-2" for="check83">
+                                                  blandit augue
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check84" id="check84">
+                                                <label class="form-check-label pl-2" for="check84">
+                                                  purus risus
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check85" id="check85">
+                                                <label class="form-check-label pl-2" for="check85">
+                                                  aptent taciti
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check86" id="check86">
+                                                <label class="form-check-label pl-2" for="check86">
+                                                  turpis egestas
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check87" id="check87">
+                                                <label class="form-check-label pl-2" for="check87">
+                                                   sapien risus
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check88" id="check88">
+                                                <label class="form-check-label pl-2" for="check88">
+                                                  vel egestas
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check89" id="check89">
+                                                <label class="form-check-label pl-2" for="check89">
+                                                  dictum eu risus
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check80" id="check80">
+                                                <label class="form-check-label pl-2" for="check80">
+                                                  accumsan lacus
+                                                </label>
+                                              </div>
+											                                                <div class="form-check form-check-inline pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check800" id="check800">
+                                                <label class="form-check-label pl-2" for="check800">
+                                                  consequat ornare
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+				<!--modal body---->
+			  </div>
+			  <div class="modal-footer">
+				<div class="input-group py-3">
+					  <input type="text" class="form-control mx-1" placeholder="Generated link" aria-label="Generated link">
+					  <button class="btn disabled-button mx-1" type="button">Copy link</button>
+					  <button class="btn orange-button mx-1" type="submit">Save</button>
+					</div>
+			  </div> </form>
+			</div>
+		  </div>
+		</div>
+		<!-- Modal -->
+		<!----Modal for banners--->
+		<div class="modal fade" id="bannersModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered modal-xl">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title fw-bold" id="exampleModalLabel2">add banners</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <form>
+			  <div class="modal-body">
+				<!---modal body--->
+                            <div class="row py-3">
+                                <div class="form-group row py-3">
+                                    <div class="col-12 col-sm-5">
+                                        <label for="scheme-name-banner" class="form-label text-muted fw-bold">Sheme name</label>
+                                        <input id="scheme-name-banner" type="text" class="form-control" >
+                                    </div>
+                                    <div class="col-12 col-sm-5">
+                                        <label for="compain-banner" class="form-label text-muted fw-bold">Compain</label>
+                                        <select id="compain-banner" class="form-select align-items-end">
+                                            <option selected>Select</option>
+                                            <option value="opt1">Option 2</option>
+                                            <option value="opt2">Option 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-2">
+                                        <label for="options-banner" class="form-label text-muted fw-bold">Language</label>
+                                        <select id="options-banner" class="form-select">
+                                            <option selected>EN</option>
+                                            <option value="opt1">PL</option>
+                                            <option value="opt2">FR</option>
+                                            </select>
+                                    </div>
+                                </div>
+                            </div>
+							<div class="row border-bottom pb-3">
+                                <div class="form-group row py-3">
+                                    <div class="col-12 col-sm-4">
+                                        <label for="weight-height" class="form-label text-muted fw-bold">Weight-Height</label>
+                                        <select id="weight-height" class="form-select align-items-end">
+                                            <option selected>Select</option>
+                                            <option value="opt1">Option 2</option>
+                                            <option value="opt2">Option 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="design" class="form-label text-muted fw-bold">Design</label>
+                                        <select id="design" class="form-select align-items-end">
+                                            <option selected>Select</option>
+                                            <option value="opt1">Option 2</option>
+                                            <option value="opt2">Option 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <label for="file-type" class="form-label text-muted fw-bold">File type</label>
+                                        <select id="file-type" class="form-select">
+                                            <option selected>All</option>
+                                            <option value="opt1">Option 1</option>
+                                            <option value="opt2">Option 2</option>
+                                            </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row py-3">
+                                <div class="form-group row">
+                                    <div class="col-12 col-sm-6">
+									<p class="text-muted fw-bold px-4">Select banners</p>
+                                        <div class="w-100 checkbox-container  overflow-auto px-4">
+                                            <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check1a" id="check1a">
+                                                <label class="form-check-label pl-2" for="check1a">
+                                                  ipsum dolor
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check2a" id="check2a">
+                                                <label class="form-check-label pl-2" for="check2a">
+                                                  sit amet
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check3a" id="check3a">
+                                                <label class="form-check-label pl-2" for="check3a">
+                                                  neque nec
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check4a" id="check4a">
+                                                <label class="form-check-label pl-2" for="check4a">
+                                                  maximus pharetra
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check5a" id="check5a">
+                                                <label class="form-check-label pl-2" for="check5a">
+                                                  augue sit
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check6a" id="check6a">
+                                                <label class="form-check-label pl-2" for="check6a">
+                                                  morbi tristique
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check7a" id="check7a">
+                                                <label class="form-check-label pl-2" for="check7a">
+                                                  mattis ipsum
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check8a" id="check8a">
+                                                <label class="form-check-label pl-2" for="check8a">
+                                                  amet auctor
+                                                </label>
+                                              </div>
+											                                                <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check8s" id="check8s">
+                                                <label class="form-check-label pl-2" for="check8s">
+                                                  laoreet tristique
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+									<div class="col-12 col-sm-6">
+									<p class="text-muted fw-bold px-4">Select websites</p>
+                                        <div class="w-100 checkbox-container  overflow-auto px-4">
+                                            <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check1b" id="check1b">
+                                                <label class="form-check-label pl-2" for="check1b">
+                                                  ipsum dolor
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check2b" id="check2b">
+                                                <label class="form-check-label pl-2" for="check2b">
+                                                  sit amet
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check3b" id="check3b">
+                                                <label class="form-check-label pl-2" for="check3b">
+                                                  neque nec
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check4b" id="check4b">
+                                                <label class="form-check-label pl-2" for="check4b">
+                                                  maximus pharetra
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check5b" id="check5b">
+                                                <label class="form-check-label pl-2" for="check5b">
+                                                  augue sit
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check6b" id="check6b">
+                                                <label class="form-check-label pl-2" for="check6b">
+                                                  morbi tristique
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check7b" id="check7b">
+                                                <label class="form-check-label pl-2" for="check7b">
+                                                  mattis ipsum
+                                                </label>
+                                              </div>
+                                              <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check8b" id="check8b">
+                                                <label class="form-check-label pl-2" for="check8b">
+                                                  amet auctor
+                                                </label>
+                                              </div>
+											                                                <div class="form-check  pt-1 pb-1">
+                                                <input class="form-check-input" type="checkbox" value="check8k" id="check8k">
+                                                <label class="form-check-label pl-2" for="check8k">
+                                                  laoreet tristique
+                                                </label>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+				<!--modal body---->
+			  </div>
+			  <div class="modal-footer">
+				<div class="input-group py-3">
+					  <input type="text" class="form-control mx-1" placeholder="Generated link" aria-label="Generated link">
+					  <button class="btn disabled-button mx-1" type="button">Copy link</button>
+					  <button class="btn orange-button mx-1" type="submit">Save</button>
+					</div>
+			  </div>
+			  </form>
+			</div>
+		  </div>
+		</div>
+		<!-- Modal -->
+<div class="modal fade" id="quitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body modal-question py-4">
+        Do you realy want to quit?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn grey-button" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn orange-button" data-bs-dismiss="modal">Quit</button>
+      </div>
+    </div>
+  </div>
+</div>
+	</main>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
